@@ -1,0 +1,336 @@
+Parcial - Segundo y ultimo Recuperatorio Fecha : 17/7/21
+TEMAS 1,2,3 Y 4
+
+Tema 1 (Reducido)
+ENUNCIADO : Un establecimiento canino analiza ciclos de reproduccion de sus hembras y dispone de una estructura que contiene para cada hembra , nombre , nro de identificacion, año de nacimiento,cantidad de partos (entre 1 y 12) y cantidad de crias que tuvo en cada parto.
+a) Realice un modulo que reciba la informacion de las hembras y retorne en una estructura adecuada,nombre,nro de identificacion y año de nacimiento de las hembras que hayan tenido a lo sumo 15 crias entre todos sus partos. La estructura resultante debe quedar ordenada por nombre.
+
+b) Realice una funcion que reciba la estructura generada en a) y un nombre y devuelva el nro de identificacion de la hembra correspondiente a ese nombre (retornar -1 en caso de que no se encuentre el nombre)
+
+program uno;
+const
+  tope = 12;
+type
+  rango = 1..tope;
+  vectorCriasXParto = array[rango] of integer;  // vector que cuenta la cantidad de crias que tuvo en cada parto 
+  hembra = record
+             nom : string;
+             nroIdent : integer;
+             anioNac : integer;
+             cantPartos : rango;
+             cantCrias : vectorCriasXParto;
+           end;
+
+  ListaD = ^nodoD;
+  nodoD = record
+             dato : hembra;
+             sig : ListaD;
+          end;
+//---------------------------------------------------------
+  hembra2 = record
+                nombre : string;
+                nroIdent : integer;
+                anioNac : integer;
+            end;
+            
+  ListaNue = ^nodo;
+  nodo = record
+            dato : hembra2;
+            sig : ListaNue;
+         end;
+
+// PROCESOS 
+
+//Procedure CargarListaHembras (var Ldis : ListaD);  // se dispone
+
+Function SumaVector (h :hembra) : integer;
+var
+  i : rango;
+  suma : integer;
+Begin
+  suma := 0;
+  for i := 1 to tope do 
+    suma := suma + h.cantCrias[i];
+  SumaVector := suma;
+End;
+
+Procedure Asignado (Ldis : ListaD; var h : hembra2);
+Begin
+  h.nombre := Ldis^.dato.nom;
+  h.nroIdent := Ldis^.dato.nroIdent;
+  h.anioNac := Ldis^.dato.anioNac;
+End;
+
+Procedure InsertarOrdenado (var L2 : ListaNue; h : hembra2);
+var
+  ant,act,aux : ListaNue;
+Begin
+  new(aux);
+  aux^.dato := h;
+  act := L2;
+  ant := L2;
+  while (act <> nil) and (act^.dato.nombre < h.nombre) do begin
+    ant := act;
+    act := act^.sig;
+  end;
+  if (ant = act) then
+    L2 := aux
+  else
+    ant^.sig := aux;
+  aux^.sig := act;
+End;
+
+Procedure GenerarNuevaLista(Ldis : ListaD; var L2 : ListaNue);
+var
+  h : hembra2;
+Begin
+  while (Ldis <> nil) do begin
+    if (SumaVector(Ldis^.dato) > 15) then begin
+      Asignado(Ldis,h);
+      InsertarOrdenado(L2,h);
+    end;
+    Ldis := Ldis^.sig;
+  end;
+End;
+
+Function BuscarElemento (L2 : ListaNue; NueNom : string) : boolean;
+var
+  act : ListaNue;
+  encontre : boolean;
+Begin
+  act := L2;
+  encontre := false;
+  while (act <> nil) and (act^.dato.nombre < NueNom) do
+    act := act^.sig;
+  if (act <> nil) and (act^.dato.nombre = NueNom) then
+    encontre := true;
+  BuscarElemento := encontre;
+End;
+
+// P.P
+
+VAR
+  Ldis : ListaD;
+  L2 : ListaNue;
+  NueNom : string;
+BEGIN
+  L2 := nil;
+  Ldis := nil;
+  CargarListaHembras (Ldis);  // se dispone
+  GenerarNuevaLista(Ldis,L2);
+  writeln('ingrese un nuevo nombre a buscar en la nueva lista');
+  readln(NueNom);
+  if (BuscarElemento (L2, NueNom)) then
+    writeln(L2^.dato.nroIdent)
+  else
+    writeln('-1');
+END.
+
+---------------------------------------------------------------------------------------------------------------
+
+TEMA 2 
+ENUNCIADO :
+Un criadero de conejos está analizando ciclos de reproduccion , El criadero cuenta con conejas reproductoras y dispone de una estructura que contiene, para cada coneja , su codigo, año de nacimiento, nombre, cantidad de partos (entre 1 y 10) y cantidad de crias que tuvo en cada parto.
+a) Realice un modulo que reciba la informacion de las conejas y retorne en una estructura adecuada, el codigo , el nombre, y el año de nacimiento de las conejas que tuvieron en promedio mas de 5 crias por parto.
+
+b) Realice un modulo que reciba la estructura generada en a) e imprima los nombres de las conejas con codigo par, nacidas antes del año 2016.
+
+c) Realice una funcion que reciba la informacion de las conejas y un codigo de coneja, y retorne la cantidad maxima de crias que tuvo la coneja con dicho codigo en alguno de sus partos. (Retornar -1 si la coneja no se encuentra en la estructura).
+---------------------------------------------------------------------------------------------------------------
+
+TEMA 3 
+ENUNCIADO :
+Un criadero de conejos está analizando ciclos de reproduccion , El criadero cuenta con conejas reproductoras y dispone de una estructura que contiene, para cada coneja , nro de identificacion, año de nacimiento, raza, cantidad de partos (entre 1 y 20) y cantidad de crias que tuvo en cada parto.
+
+a) Realice un modulo que reciba la informacion de las conejas y retorne en una estructura adecuada, el nro de identificacion, la raza, y el año de nacimiento de las conejas que tuvieron algun parto con mas de 8 crias.
+
+b) Realice un modulo que reciba la estructura generada en a) e imprima la cantidad de conejas, nacidas en el año 2018, cuyo codigo termina en 0.
+
+c) Realice una funcion que reciba la informacion de las conejas y un codigo de coneja y retorne el promedio de crias por parto que tuvo dicha coneja o -1 si la coneja no se encuentra en la estructura.
+---------------------------------------------------------------------------------------------------------------
+
+TEMA 4
+ENUNCIADO :
+La asociacion de criadores de conejos analiza ciclos de reproduccion .
+Para ello, dispone de una estructura con informacion de conejas de distintos criaderos.
+De cada coneja se conoce : codigo, año de nacimiento, nombre, cantidad de partos (entre 1 y 15) y cantidad de crias que tuvo en cada parto
+a) Realice un modulo que reciba la informacion de conejas y retorne en una estructura adecuada, el codigo, el nombre y el año de nacimiento de las conejas que tuvieron mas de 30 crias entre todos sus partos.
+
+b) Realice un modulo que reciba la estructura generada en a) e imprima el nombre de las conejas nacidas entre 2014 y 2019 con codigo impar.
+
+c) Realice una funcion que reciba la informacion de conejas y un codigo de coneja, y retorne el promedio de crias por parto de dicha coneja (retorne -1 si la coneja no se encuentra en la estructura)
+
+---------------------------------------------------------------------------------------------------------------
+TEMAS 5,6,7 Y 8 
+
+TEMA 5 
+ENUNCIADO :
+Un criadero de cerdos dispone de informacion sobre los partos registrados. De cada parto se conoce : año, codigo de la madre (entre 200 y 599) y cantidad de crias paridas.  Una madre puede parir mas de una vez.
+
+a) Realice un modulo que lea la informacion de las 400 madres y la almacene en una estructura adecuada. De cada madre se lee : codigo, año de nacimiento y raza. La informacion se ingresa sin orden.
+
+b) Realice un modulo que reciba la informacion de partos, la informacion de madres y un codigo de madre, y retorne en una estructura adecuada la informacion de todos los partos de dicha madre, en los que hayan parido al menos 4 crias y en los que la madre tenia al menos 2 años al momento del parto.  La estructura debe quedar ordenada por cantidad de crias del parto.
+
+c) Realice un modulo que reciba la informacion de partos generada en b) e informe el promedio de crias por parto de dicha madre.
+---------------------------------------------------------------------------------------------------------------
+
+TEMA 6 
+ENUNCIADO :
+Un criadero de cerdos dispone de informacion sobre todos los partos registrados. De cada parto se conoce : año, codigo de la madre (entre 200 y 499) y cantidad de crias paridas.Una madre puede parir mas de una vez.
+a) Realice un modulo que lea la informacion de las 300 madres y la almacene en una estructura adecuada.  De cada madre se lee : codigo, año de nacimiento y raza. La informacion se ingresa sin orden.
+
+b) Realice un modulo que reciba la informacion de partos, la informacion de madres y un codigo de madre y retorne en una estructura adecuada la informacion de todos los partos de dicha madre, en los que la madre tenia al menos 1 año al momento del parto. 
+La estructura debe quedar ordenada por cantidad de crias del parto.
+
+c) Realice un modulo que reciba la informacion de partos generada en b) e informe la cantidad de partos en los que nacieron menos de 4 crias.
+
+{ TEMA 6 
+ENUNCIADO :
+Un criadero de cerdos dispone de informacion sobre todos los partos registrados. 
+De cada parto se conoce : año, codigo de la madre (entre 200 y 499) y cantidad de crias paridas.
+Una madre puede parir mas de una vez.
+
+a) Realice un modulo que lea la informacion de las 300 madres y la almacene en una estructura adecuada.
+De cada madre se lee : codigo, año de nacimiento y raza. La informacion se ingresa sin orden.
+
+b) Realice un modulo que reciba la informacion de partos, la informacion de madres y un codigo de madre 
+y retorne en una estructura adecuada la informacion de todos los partos de dicha madre, 
+en los que la madre tenia al menos 1 año al momento del parto. 
+La estructura debe quedar ordenada por cantidad de crias del parto.
+
+c) Realice un modulo que reciba la informacion de partos generada en b) e informe la cantidad de 
+partos en los que nacieron menos de 4 crias.  }
+
+program uno;
+const
+  min = 200;
+  max = 499;
+type
+  rango = min..max;
+  parto = record
+             Anio : integer;
+             codMadre : rango;
+             cantCrias : integer;
+          end;
+  ListaD = ^nodoD;  // esta lista dispone la carga de partos, (no se sabe cuantos partos)
+  nodoD = record
+             dato : parto;
+             sig : ListaD;
+          end;
+//------------------------------------------------------------------------------
+  madre = record
+             cod : integer;
+             anioNac : integer;
+             raza : string;
+          end;
+  vectorMadres = array[rango] of madre;
+
+// PROCESOS
+Procedure CargarListaPartos (var Ldis : ListaD);  // se dispone
+
+Procedure LeerMadre (var m : madre);
+Begin
+  with m do begin
+    readln(cod);
+    readln(anioNac);
+    readln(raza);
+  end;
+End;
+
+Procedure CargarVectorMadres (var vec : vectorMadres);
+var
+  i : integer;
+  m : madre;
+Begin
+  for i := min to max do begin
+    LeerMadre (m)
+    vec[m.cod] := m;
+  end;
+End;
+
+Function CumpleEdad (p : parto; m : madre) : boolean;
+Begin
+  CumpleEdad := (p.Anio - m.anioNac >= 1);
+End;
+
+Procedure InsertarOrdenado (var L : ListaD; p : parto);
+var
+  ant,act,aux : ListaD;
+Begin
+  new(aux);
+  aux^.dato := p;
+  act := L;
+  ant := L;
+  while (act <> nil) and (act^.dato.cantCrias > p.cantCrias) do begin
+    ant := act;
+    act := act^.sig;
+  end;
+  if (ant = act) then
+    L := aux
+  else
+    ant^.sig := aux;
+  aux^.sig := act;
+End;
+
+Procedure GenerarNuevaLista (Ldis : ListaD; vec : vectorMadres; NueCod : integer; var L : ListaD);
+Begin
+  while (Ldis <> nil) do begin
+    if (CumpleEdad (Ldis^.dato,vec[Ldis^.dato.codMadre])) then
+      InsertarOrdenado (L,Ldis^.dato);
+    Ldis := Ldis^.sig;
+  end;
+End;
+
+Function InformeXCondicion (L : ListaD) : integer;
+var
+  cantPartos : integer;
+Begin
+  cantPartos := 0;
+  while (L <> nil) do begin
+    if (L^.dato.cantCrias < 4) then
+      cantPartos := cantPartos + 1;
+    L := L^.sig;
+  end;
+  InformeXCondicion := cantPartos;
+End;
+
+// P.P
+VAR
+  Ldis : ListaD;
+  vec : vectorMadres;
+  NueCod : integer;
+  L : ListaD;
+BEGIN
+  L := nil;
+  Ldis := nil;
+  CargarListaPartos(Ldis); // se dispone
+  CargarVectorMadres (vec);
+  writeln('ingrese un nuevo cod de madre');
+  readln(NueCod);
+  GenerarNuevaLista (Ldis,vec,NueCod,L);
+  writeln(InformeXCondicion(L));
+END.
+---------------------------------------------------------------------------------------------------------------
+
+TEMA 7 
+ENUNCIADO :
+Un criadero de cerdos dispone de informacion sobre los partos registrados . De cada parto se conoce : año ,codigo de la madre (entre 100 y 499) y cantidad de crias nacidas. 
+Una madre puede parir mas de una vez.
+a) Realice un modulo que lea la informacion de las 400 madres y la almacene en una estructura adecuada. De cada madre se lee : codigo, año de nacimiento y raza.
+La informacion se ingresa sin orden.
+
+b) Realice un modulo que reciba la informacion de partos, la informacion de madres y un codigo de madre, y retorne en una estructura adecuada la informacion de los partos de dicha madre, en los que la madre tenia a lo sumo 3 años al momento del parto. 
+La estructura debe quedar ordenada por cantidad de crias del parto.
+
+c) Realice un modulo que reciba la informacion de los partos generada en b) e informe la cantidad de partos en los que nacieron mas de 8 crias.
+---------------------------------------------------------------------------------------------------------------
+
+TEMA 8 (REDUCIDO)
+ENUNCIADO :
+Un establecimiento canino dispone de informacion sobre los partos registrados . De cada parto se conoce : nro de identificacion, año, codigo de la madre, ( entre 100 y 499) y cantidad de crias nacidas. 
+Una madre puede parir mas de una vez. La estructura se encuentra ordenada por año de manera ascendente.
+
+a) Realice un modulo que lea informacion de las 400 madres y la almacene en una estructura adecuada. De cada madre se lee : codigo y raza.
+La informacion se ingresa sin orden
+
+b) Realice un modulo que reciba la informacion de los partos y la informacion de las madres y retorne una nueva estructura con los nro de identificacion de los partos de madres de raza 'doberman' que se produjeron antes del año 2000.

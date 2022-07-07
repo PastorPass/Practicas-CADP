@@ -1,0 +1,105 @@
+ PARCIAL TEMA 1 : RESOLUCION CATEDRA
+
+Una compañia aerea desea analizar la informacion de los tickets vendidos a sus clientes . La empresa cuenta con 1200 servicios de 
+vuelos diferentes, en adelante denominadas "vuelo".
+De cada ticket se conoce el codigo de vuelo ( entre 1 y 1200) dni del cliente, pais de origen, pais de destino, y valor del ticket.
+La informacion de los tickets se dispone en una estructura de datos adecuada, y se encuentra ordenada por el dni del cliente (un cliente
+puede haber comprado mas de un ticket en distintos vuelos)
+Realizar un programa que procese la informacion de los tickets y calcule :
+a) Cantidad de vuelos dentro de un mismo pais se hayan tenido mas de 50 pasajeros
+
+b) Dni del cliente que mas dinero gastó en tickets 
+
+c) Cantidad de clientes cuyo dni terminen en 0 o en 5.   
+----------------------------------------------------------------------------------------
+ TEMA 2 -PARCIAL PRIMERA FECHA
+Una empresa de fletes de larga distancia desea analizar los servicios realizados por sus camiones .  De cada servicio se conoce el codigo de
+camion (entre 200 y 255), nombre de la provincia de origen , nombre de la provincia de destino, cantidad de kilometros recorridos y dni del 
+cliente.
+La informacion de los servicios se encuentra disponible en una estructura de datos adecuada, y esta ordenada por provincia de origen    
+Realizar un programa que procese la informacion de los servicios e informe :
+a) Cantidad de camiones que recorrieron mas de 5000 kilometros entre todos sus viajes.
+
+b) Nombre de la provincia desde donde partieron mas viajes 
+
+c) Cantidad de clientes con dni impar cuyos viajes fueron de la misma provincia. 
+----------------------------------------------------------------------------------------
+ TEMA 3 -PARCIAL PRIMERA FECHA
+Un sevicio de comercio electronico desea analizar las ventas de notebooks durante la ultima edicion del hot sale.
+De cada notebook vendida se conoce : codigo del cliente ;  codigo de modelo (1..200); marca y el medio de pago 
+utilizado (1. credito;  2. debito;  3. Transferencia;  4. MercadoPago;  5. Bitcoin;  6. Otro)
+
+Ademas , el servicio dispone de una tabla con el valor de venta de cada uno de los modelos de notebooks 
+
+a) Realizar un modulo que retorne la informacion de las ventas de notebooks en una estructura de datos adecuada.
+La informacion se ingresa por teclado y debe almacenarse en el orden en que fue leida, la lectura finaliza cuando se ingresa el codigo de cliente -1 
+
+b) Realizar un modulo que reciba la informacion obtenida en el inciso anterior y retorne :
+- Los dos medios de pago que generaron el mayor monto total en ventas   
+
+- Cantidad de notebooks de marca lenovo vendidas a clientes cuyo codigo de cliente termina con un digito par   
+----------------------------------------------------------------------------------------
+ TEMA 4 -PARCIAL PRIMERA FECHA
+ Una empresa de telefonia celular desea analizar las ventas de 120 modelos de telefonos durante la ultima edicion del cybermonday.
+De cada telefono vendido se conoce su codigo (entre 1..130), codigo de cliente, marca del telefono y el medio de pago utilizado
+(1. Credito;  2. Debito;  3. Transferencia;  4. Mercado Pago;  5. Bitcoin;  6. Otro)
+
+Ademas el servicio dispone de una tabla con el valor de venta de cada uno de los telefonos. 
+
+a) Realizar un modulo que retorne la informacion de las ventas de telefonos en una estructura de datos adecuada . La informacion
+se ingresa por teclado y debe almacenarse en el orden en que fue leida.  La lectura finaliza cuando se ingresa
+el codigo de cliente 11111, que debe procesarse.
+
+b) Realizar un modulo que reciba la informacion cargada en el inciso anterior y retorne :
+- Los dos medios de pago que generaron el mayor monto total en ventas      
+
+-Cantidad de telefonos de marca 'motorola' vendidos a clientes cuyo codigo de cliente no termine ni en 0 ni en digito 1
+----------------------------------------------------------------------------------------
+TEMA 5 : PARCIAL PRIMERA FECHA
+Una compañia aerea desea analizar la informacion de los tickets vendidos a sus clientes. La empresa cuenta con
+400 sevicios de vuelo diferentes, en adelante denominados "vuelo"
+De cada ticket se conoce el codigo de vuelo ( entre 1 y 400); numero de ticket , apellido del cliente;  pais de 
+origen y pais de destino; 
+La informacion de los tickets ya se encuentra disponible en una estructura de datos adecuada, y se encuentra ordenada 
+por el apellido del cliente ( un cliente puede haber comprado mas de un ticket en distintos vuelos)
+Realizar un programa que procese la informacion de los tickets y calcule : 
+
+a) Cantidad de vuelos dentro de un mismo pais que hayan tenido mas de 65 pasajeros  
+
+b) Apellido del cliente que compro mas tickets
+
+c) Cantidad de tickets cuyo numero termine en 2 o en 5.  
+----------------------------------------------------------------------------------------
+TEMA 6 : PARCIAL PRIMERA FECHA
+Un servicio de comercio electronico desea analizar las ventas de notebooks durante la ultima edicion del cybermonday.  De cada notebook
+vendida se conoce su codigo de modelo ( entre 1 y 150), marca , codigo del cliente, y codigo de sistema operativo instalado 
+(1. win10 ; 2. win7 ; 3. ubuntu Linux ; 4. Red Hat ; 5. Mac Os ; 6. sin Sistema operativo)
+Ademas, el servicio dispone de una tabla con el valor de la licencia de cada sistema operativo
+
+- Realizar un modulo que retorne la informacion de las ventas de notebooks en una estructura de datos adecuada.  La informacion se ingresa 
+por teclado y debe almacenarse en el orden en que fue leida. La lectura finaliza cuando se ingresa el codigo de cliente  -1 
+
+- Realizar un modulo que reciba la informacion obtenida en el inciso anterior y retorne : 
+    - Los dos sistemas operativos que generaron el mayor monto de ventas 
+    - Cantidad de notebooks de marca lenovo vendidas a clientes cuyo codigo de cliente termina con un digito par 
+
+------------------ACLARACION DE TEMAS 3,  4  Y  6 ----------------------------------------
+----------------------------PROBLEMA GENERAL ----------------------------------
+- Se dispone de un vector con precio por modelo, licencia de sistema operativo o notebook( segun el tema)
+
+SE PIDE : 
+1. Generar una lista, agregando atras
+2. Calcular dos maximos 
+3. Contar cantidad de elementos de la lista que cumplen con una condicion en sus campos.
+
+
+------------------ACLARACION DE TEMAS 1,  2  Y  5 ----------------------------------------
+----------------------------PROBLEMA GENERAL ----------------------------------
+- Se dispone de una lista ordenada 
+- La informacion que se guarda en la lista es un registro con un campo de tipo subrango ( vuelo/ camion) entre otros.
+
+SE PIDE :
+1. Contar cantidades de elementos considerando el campo de tipo subrango, Es necesario llevar un vector con una dimension fisica que 
+coincida con dicho subrango
+2. Calcular un maximo realizando un corte de control por el campo por el cual está ordenada la lista que se dispone
+3. Contar cantidad de elementos de la lista que cumplen con una condicion en sus campos. 

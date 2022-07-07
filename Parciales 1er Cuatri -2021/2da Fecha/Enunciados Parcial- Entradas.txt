@@ -1,0 +1,73 @@
+                    ENUNCIADOS ------------------> PARCIALES CON VENTAS DE ENTRADAS----------------
+
+TEMA A 
+ENUNCIADO :	
+El comite organizador del torneo de futbol Copa America 2021 , esta analizando la informacion de las entradas vendidas para los 38 partidos del torneo.
+Para ello, dispone de una estructura de datos con informacion de todas las ventas de entradas.
+De cada venta se conoce el codigo de partido ( entre 1 y 38) , codigo de cliente y la cantidad de entradas vendidas.
+Esta informacion no se encuentra ordenada por ningun criterio
+Realizar un programa que :
+a) Invoque a un modulo que lea la informacion de los 38 partidos y la almacene en una estructura de datos adecuada. De cada partido se conoce su codigo ( entre 1 y 38); nombre del estadio donde se juega, la capacidad maxima del estadio y la hora de inicio.
+Esta informacion se ingresa por teclado, y se ingresa sin ningun orden en particular.
+
+b) Invoque a un modulo que reciba la informacion de las ventas de entradas y la informacion de los partidos y retorne :
+i) Una lista con los codigos de partidos que superan el 50 % de la capacidad del estadio
+
+ii) Cantidad de ventas de menos de 5 entradas cuyo codigo del cliente termina entre 30 y 39.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+TEMA B 
+ENUNCIADO  : 		
+El comite organizador del mundial Qatar 2022 , esta analizando la informacion de las entradas vendidas para los 48 partidos del torneo.
+Para ello, dispone de una estructura de datos con informacion de todas las ventas de entradas.
+De cada venta se conoce el codigo de partido ( entre 1 y 48) , codigo de cliente y la cantidad de entradas vendidas.
+Esta informacion no se encuentra ordenada por ningun criterio
+Realizar un programa que :
+a) Invoque a un modulo que lea la informacion de los 48 partidos y la almacene en una estructura de datos adecuada. De cada partido se conoce su codigo ( entre 1 y 48); nombre del estadio donde se juega, la capacidad maxima del estadio y la hora de inicio.
+Esta informacion se ingresa por teclado, y se ingresa sin ningun orden en particular.
+
+b) Invoque a un modulo que reciba la informacion de las ventas de entradas y la informacion de los partidos y retorne :
+i) Una lista con los codigos de partidos que ya tienen todas las entradas vendidas
+
+ii) Cantidad de ventas de mas de 5 entradas cuyo codigo del cliente termina en 10 o en 20
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+TEMA C 
+ENUNCIADO :
+El comite organizador del campeonato de futbol eurocopa 2021 está analizando  la informacion de las entradas vendidas para sus 51 partidos. Para ello, dispone de una estructura de datos con informacion de todas las ventas de entradas. 
+De cada venta se conoce : el codigo de partido (entre 1 y 51) ; codigo del cliente y la cantidad de entradas vendidas.  Esta informacion no se encuentra ordenada por ningun criterio.
+Realizar un programa que :
+
+a) Invoque a un modulo que lea la informacion de los 51 partidos y la almacene en una estructura de datos adecuada. De cada partido se conoce : su codigo (entre 1 y 51) , nombre del estadio donde se juega, la capacidad maxima del estadio y la hora de inicio. Esta informacion se ingresa por teclado y se ingresa sin ningun orden en particular.
+
+b) Invoque a un modulo que reciba la informacion de las ventas de entradas y la informacion de los partidos, y retorne una lista con los codigos de partidos que ya tienen todas las entradas vendidas.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+TEMA D 
+ENUNCIADO :
+La fifa esta analizando la informacion de las entradas vendidas para los 52 partidos del mundial de futbol Italia 90. Para ello, se dispone de una estructura de datos con informacion de todas las entradas vendidas. 
+De cada entrada se conoce el numero de partido (entre 1 y 52) y el pais de origen del comprador
+La informacion se encuentra ordenada por el pais de origen del comprador.
+Realizar un programa que :
+
+1. Invoque a un modulo que lea la informacion de los 52 partidos y la almacene en una estructura adecuada.
+De cada partido se  conoce su numero (entre 1 y 52) ; nombre del estadio donde se jugó, y nombre de los 2 equipos que participaron. Esta informacion se ingresa por teclado y se ingresa sin orden en particular.
+
+2. Invoque a un modulo que reciba la informacion de las entradas y la informacion de los partidos e informe :
+
+a) Cantidad de partidos con mas de 30.000 entradas vendidas
+
+b) Nombre del pais con mayor cantidad de entradas adquiridas para partidos en los que no juega su equipo.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+TEMA E 
+ENUNCIADO : 
+La fifa esta analizando la informacion de las entradas vendidas para los 38 partidos del mundial de futbol ARGENTINA 78 
+Para ello, dispone de una estructura de datos con informacion de todas las entradas vendidas.
+De cada entrada, se conce : el numero de partido (entre 1 y 38) y el pais de origen del comprador.
+La informacion se encuentra ordenada por el pais de origen del comprador.
+Realizar un programa que :
+1. Invoque a un modulo que lea la informacion de los 38 partidos y la almacene en una estructura adecuada.
+De cada partido se conoce : su numero( entre 1 y 38); nombre del estadio donde se jugó y nombre de los 2 equipos que participaron.
+Esta informacion se ingresa por teclado y se ingresa sin ningun orden en particular.
+
+2. Invoque a un modulo que reciba la informacion de las entradas y la informacion de los partidos , e informe :
+a) Cantidad de partidos con menos de 30.000 entradas vendidas
+
+b) Nombre del pais con mayor cantidad de entradas adquiridas para partidos en los que juega su equipo.

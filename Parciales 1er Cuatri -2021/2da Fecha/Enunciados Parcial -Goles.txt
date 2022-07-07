@@ -1,0 +1,43 @@
+PARCIALES CON GOLES
+
+ENUNCIADO :
+TEMA A : La fifa está analizando la informacion de resultados en los 18 partidos del mundial de futbol uruguay 30. Para ello, dispone de una estructura de datos con informacion de los goles realizados en todos los partidos.  De cada gol se conoce : el numero de partido (entre 1 y 18) y el equipo que lo realizó.
+La informacion se encuentra ordenada por equipo.
+Realizar un programa que :
+
+1. Invoque a un modulo que retorne informacion de los 18 partidos almacenada en una estructura adecuada. De cada partido se conoce : su numero (entre 1 y 18), nombre del estadio donde se jugó y nombre de los equipos o paises que participaron.
+Esta informacion se ingresa por teclado y se ingresa sin ningun orden en particular.
+
+2. Invoque a un modulo que reciba la infomacion de los goles y la informacion de los partidos e informe :
+
+a) Cantidad de partidos con menos de 5 goles.
+
+b) Nombre del equipo con mayor cantidad de goles realizados en el estadio centenario.
+---------------------------------------------------------------------------
+TEMA B
+ENUNCIADO : 
+La fifa esta analizando la informacion de resultados en los 52 partidos del mundial de futbol italia 90.
+Para ello, dispone de una estructura de datos con informacion de los goles realizados en todos los partidos.
+De cada gol se conoce : el numero de partido (entre 1 y 52); el equipo o pais; y el numero de camiseta del jugador que lo realizo. 
+La informacion se encuentra ordenada por pais.
+Realizar un programa que :
+1. Invoque a un modulo que retorne informacion de los 52 partidos almacenada en una estructura adecuada.
+De cada partido se conoce su numero (entre 1 y 52) ; nombre del estadio donde se jugó, y nombre de los 2 paises que participaron.
+Esta informacion se ingresa por teclado, y se ingresa sin ningun orden en particular.
+
+2. Invoque a un modulo que reciba la informacion de los goles y la informacion de los partidos, e informe :
+
+a) Cantidad de partidos con mas de 5 goles
+
+b) Nombre del pais con mayor cantidad de goles realizados en el estadio San Paolo por el jugador con camiseta numero 9. / Nombre del pais con mayor cantidad de goles realizados por el jugador con camiseta numero 9 o 7.
+----------------------------------------------------------------------------------
+TEMA C 
+ENUNCIADO :
+La UEFA está analizando la informacion de resultados en los 51 partidos del campeonato de futbol EUROCOPA 2021. Para ello, dispone de una estructura de datos con informacion de los goles realizados en todos los partidos. De cada gol se conoce : el numero de partido (1..51) y el equipo que lo realizó.
+La informacion se encuentra ordenada por equipo.
+Realizar un programa que :
+
+1. Invoque a un modulo que retorne informacion de los 51 partidos almacenada en una estructura adecuada.  De cada partido se conoce : su numero (1..51) , nombre del estadio donde se jugó y nombre de los dos equipos o paises que participaron.
+Esta informacion se ingresa por teclado y se ingresa sin ningun orden en particular.
+
+2. Invoque a un modulo que reciba la informacion de los goles y la informacion de los partidos e informe el nombre del equipo con mayor cantidad de goles realizados en el estadio San pablo. 
