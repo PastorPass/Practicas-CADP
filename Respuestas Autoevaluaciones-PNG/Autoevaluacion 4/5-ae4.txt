@@ -1,0 +1,41 @@
+5-
+Dado el siguiente programa:
+
+program registrosYFunciones;
+type
+  TDireccion = record
+     calle : integer;
+     numero : integer;
+  end;
+  TAlumno = record
+     nombre : string;
+     legajo : string;
+     direccion : TDireccion;
+  end;
+
+procedure imprimirAlumno(alu : TAlumno);
+begin
+  writeln(alu.nombre,’ Legajo: ‘,alu.legajo, ‘ . Dir. ‘ alu.direccion.calle,’  nro. ’, alu.direccion.numero);
+end;
+
+procedure cargarDireccion(var d : Tdireccion);
+begin
+    d.calle := 7;
+    d.numero := 776;
+end;
+
+procedure cargarAlumno (alu : TAlumno);
+begin
+    alu.nombre := ‘Armando’;
+    alu.legajo := ‘00001’;
+    cargarDireccion(alu.direccion);
+    imprimirAlumno(alu);
+end;
+var
+   alumno : Talumno;
+begin
+    cargarAlumno(alumno);
+    imprimirAlumno(alumno);
+end.
+
+Marque la opción correcta:
