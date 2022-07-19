@@ -14,5 +14,6 @@ Estan los enunciados de los temas separados por fecha en un archivo .txt
 Hay soluciones propuestas de la catedra junto con las mias.  
   
 Actualizo :   
--En una carpeta estan todas las presentaciones de las practicas en PDF.     
--Ya estan las autoevaluaciones subidas hasta la 5ta en formato PNG.
+- En una carpeta estan todas las presentaciones de las practicas en PDF.      
+- Ya estan las autoevaluaciones subidas hasta la 5ta en formato PNG.  
+- Está el examen que se tomó para promocionar la materia (sin respuestas) del sabado 16/7/22
